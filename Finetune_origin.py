@@ -102,7 +102,7 @@ class CustomTrainingArguments(TrainingArguments):
         }
     )
     save_steps: Optional[int] = field(
-        default=10000,
+        default=500,
         metadata={
             "help": "Save checkpoint every X updates steps."
         }
@@ -218,14 +218,14 @@ sys.argv = [
     "--model_name_or_path", "Qwen2.5-0.5B",
     "--dataset_path", "alpaca-cleaned",
     "--output_dir", "outputs",
-    "--max_length", "1024",
+    "--max_length", "2048",
     "--train_size", "0.9",
     "--remove_unused_columns", "False",
     "--torch_dtype", "bfloat16",#这里不要float16，会报错
-    "--per_device_eval_batch_size","2",
-    "--train_batch_size","4",
-    "--fp16","True",
-    "--num_train_epochs", "1",  # 指定训练的轮数
+    "--per_device_eval_batch_size","1",
+    "--train_batch_size","2",
+    "--fp16","False",
+    "--num_train_epochs", "3",  # 指定训练的轮数
 ]
 finetune()
     

@@ -237,7 +237,7 @@ sys.argv = [
     "--remove_unused_columns", "False",
     "--torch_dtype", "bfloat16",#这里不要float16，会报错
     "--per_device_eval_batch_size","1",
-    "--fp16","True",
+    "--fp16","False",
     "--num_train_epochs", "1",  # 指定训练的轮数
 ]
 finetune()
